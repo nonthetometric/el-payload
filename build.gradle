@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  juelVersion = '2.2.7'
+  junitVersion = '5.7.2'
+}
+
+dependencies {
+  implementation "de.odysseus.juel:juel-api:${juelVersion}"
+  implementation "de.odysseus.juel:juel-impl:${juelVersion}"
+  testImplementation "com.google.guava:guava:30.1.1-jre"
+  testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+test {
+  useJUnitPlatform()
+}
